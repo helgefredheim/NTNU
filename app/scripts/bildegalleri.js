@@ -71,16 +71,20 @@ var start_bildegalleri = function(el) {
 	// Tar i mot et dom-element med jQuery-funksjoner, f.eks.
 	// $('<div id="bildegalleri" />');
 
-	var sok = "New York"
+	var sok = "Trondheim";
 	var url = lag_flickr_url(sok);
 	var antall_bilder = 8;
 
-	$.getJSON(url, function(respons) {
-		lag_bildeobjekter(respons.items); 
-		var html = lag_bildestripe_html(antall_bilder); 
-		el.prepend(html);
-		el.append(bildeviser);
-		vis_stort_bilde(0);
+	$.ajax({
+		dataType: "json",
+		url: url,
+		success: function(respons) {
+			lag_bildeobjekter(respons.items); 
+			var html = lag_bildestripe_html(antall_bilder); 
+			el.prepend(html);
+			el.append(bildeviser);
+			vis_stort_bilde(0);
+		}
 	});
 
 };
