@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Image Gallery</title>
+        <script src="scripts/vendor/jquery.min.js" type="text/javascript"></script>
+        <script src="scripts/bildegalleri.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="page-title">Image Gallery</h1>
+
+            <div id="bildegalleri"></div>
+
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    start_bildegalleri($("#bildegalleri"));
+                }); 
+            </script>
+
+        </div>
+    </body>
+</html>
